@@ -5,6 +5,7 @@ import 'package:teamsta/models/teamModel.dart';
 
 import '../../../constants/colors.dart';
 import '../../../constants/controllers.dart';
+import '../../../constants/string_constants.dart';
 import '../../../widgets/custom_form_field.dart';
 
 // ignore: must_be_immutable
@@ -74,7 +75,7 @@ class _ContactEmailState extends State<ContactEmail> {
                 hintText: "",
                 // hintText: "Email",
                 caps: TextCapitalization.none,
-                fillColour: customLightGrey,
+                fillColour: formFieldLightGrey,
                 validate: (value) {
                   //TODO: set a number validation to this
                 },
@@ -89,7 +90,7 @@ class _ContactEmailState extends State<ContactEmail> {
                 cInputAction: TextInputAction.done,
                 hintText: "",
                 caps: TextCapitalization.sentences,
-                fillColour: customLightGrey,
+                fillColour: formFieldLightGrey,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
@@ -98,26 +99,33 @@ class _ContactEmailState extends State<ContactEmail> {
                       FocusManager.instance.primaryFocus?.unfocus();
                       if (_contactName.text.isEmpty ||
                           _contactEmail.text.isEmpty) {
+                        // Get.snackbar(
+                        //   '',
+                        //   '',
+                        //   titleText: Text(
+                        //     "Form Error",
+                        //     textAlign: TextAlign.center,
+                        //     style: Theme.of(context)
+                        //         .textTheme
+                        //         .headline2!
+                        //         .copyWith(color: Colors.white),
+                        //   ),
+                        //   messageText: Text(
+                        //     "Please enter the contact details",
+                        //     textAlign: TextAlign.center,
+                        //     style: Theme.of(context)
+                        //         .textTheme
+                        //         .headline3!
+                        //         .copyWith(color: Colors.white),
+                        //   ),
+                        // );
                         Get.snackbar(
-                          '',
-                          '',
-                          titleText: Text(
-                            "Form Error",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline2!
-                                .copyWith(color: Colors.white),
-                          ),
-                          messageText: Text(
-                            "Please enter the contact details",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: Colors.white),
-                          ),
-                        );
+                            StringConstants.ERROR, "Please Enter contact details",
+                            colorText: Colors.white);
+                      } else if(!GetUtils.isEmail(_contactEmail.text)){
+                        Get.snackbar(
+                            StringConstants.ERROR, "Please Enter Valid Email",
+                            colorText: Colors.white);
                       } else {
                         controller.updateEmailAddresses(
                             _contactName.text, _contactEmail.text);
@@ -143,7 +151,13 @@ class _ContactEmailState extends State<ContactEmail> {
                           return Spacer();
                         } else
                           return Dismissible(
-                            background: Container(color: Colors.red),
+                            background: Container(
+                              color: Colors.red,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [Icon(Icons.delete,color: Colors.white,),SizedBox(width: 12,)],
+                              ),
+                            ),
                             onDismissed: (_) {
                               var id = teamController.phoneList.value[index].id;
                               if (teamController.emailsList.value.length > 0) {

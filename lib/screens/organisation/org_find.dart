@@ -169,8 +169,8 @@ class TeamFind extends StatelessWidget {
                           );
                         }
                       }
-                      return LinearProgressIndicator(
-                        minHeight: 1.1,
+                      return Container(
+                        // minHeight: 1.1,
                       );
                     });
               },

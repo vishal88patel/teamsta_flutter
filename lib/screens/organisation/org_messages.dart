@@ -20,7 +20,7 @@ class _TeamMessagesState extends State<TeamMessages> {
   void initState() {
     super.initState();
     // vishal-----//
-    // isChecking.addListener(checkAgain);
+    isChecking.addListener(checkAgain);
     // vishal-----//
 
   }

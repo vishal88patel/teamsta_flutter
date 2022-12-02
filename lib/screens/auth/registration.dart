@@ -173,8 +173,12 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                                   imageFromGallery();
                                                   Get.back();
                                                 },
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Colors.white,
+                                                ),
                                                 child: Text(
-                                                    "Upload from Gallery")),
+                                                    "Upload from Gallery", style: TextStyle(
+                                                    color: Colors.black))),
                                             Padding(
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 15),
@@ -183,18 +187,27 @@ class _RegistrationPageState extends State<RegistrationPage> {
                                                     imageFromCamera();
                                                     Get.back();
                                                   },
+                                                  style: ElevatedButton.styleFrom(
+                                                    primary: Colors.white,
+                                                  ),
                                                   child: Text(
-                                                      "Upload from Camera")),
+                                                      "Upload from Camera", style: TextStyle(
+                                                      color: Colors.black),)),
                                             ),
                                             ElevatedButton(
                                                 onPressed: () => Get.back(),
-                                                child: Text("Cancel")),
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Colors.white,
+                                                ),
+                                                child: Text("Cancel",style: TextStyle(
+                                                    color: Colors.black))),
                                           ]),
                                     ),
                                   ),
                                 ),
                               ),
                             );
+
                           },
                           child: CircleAvatar(
                             radius: 60,

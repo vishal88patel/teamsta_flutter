@@ -362,7 +362,7 @@ class Information {
 
     try {
       switch (response.statusCode) {
-        case 201:
+        case 200:
           print(jsonResponse);
           clearControllers();
           userGetController.teamInfo.value.clear();

@@ -44,7 +44,7 @@ class TeamMore extends StatelessWidget {
                     var data = {
                       "id": userGetController.teamInfo.value[0].team.id
                     };
-                    // Get.to(EditProfile(), arguments: data);
+                    Get.to(EditProfile(), arguments: data);
                   }),
               CustomMoreCard(
                   title: "Contact Number",
@@ -101,10 +101,10 @@ class TeamMore extends StatelessWidget {
                     Get.to(TeamServicesCreate());
                   }),
               CustomMoreCard(
-                  // title: userGetController.teamInfo.value[0].firstName,
-                  // subtitle: userGetController.teamInfo.value[0].email,
-                  title: "Joe Doe",
-                  subtitle: "john@doe.com",
+                  title: userGetController.teamInfo.value[0].firstName,
+                  subtitle: userGetController.teamInfo.value[0].email,
+                  // title: "Joe Doe",
+                  // subtitle: "john@doe.com",
                   isSubtitle: true,
                   function: () {
                     var imageUrl = userGetController

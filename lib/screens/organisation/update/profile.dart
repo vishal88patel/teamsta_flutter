@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:get/get.dart';
@@ -9,6 +10,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:teamsta/constants/export_constants.dart';
 import 'package:teamsta/global/lists/category_list.dart';
 import 'package:teamsta/widgets/widgets.dart';
+
+import '../../../constants/string_constants.dart';
 
 class EditProfile extends StatefulWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -80,6 +83,15 @@ class _EditProfileState extends State<EditProfile> {
           title: Text(
             'Profile',
           ),
+          leading: InkWell(
+              onTap: () {
+                Get.back();
+              },
+              child: Icon(
+                CupertinoIcons.chevron_back,
+                color: primaryWhite,
+                size: 30,
+              )),
         ),
         body: Center(
           child: Padding(
@@ -110,7 +122,11 @@ class _EditProfileState extends State<EditProfile> {
                                               imageFromGallery();
                                               Get.back();
                                             },
-                                            child: Text("Upload from Gallery")),
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Colors.white,
+                                            ),
+                                            child: Text("Upload from Gallery",style: TextStyle(
+                                                color: Colors.black))),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
                                               vertical: 15),
@@ -119,18 +135,28 @@ class _EditProfileState extends State<EditProfile> {
                                                 imageFromCamera();
                                                 Get.back();
                                               },
+                                              style: ElevatedButton.styleFrom(
+                                                primary: Colors.white,
+                                              ),
                                               child:
-                                                  Text("Upload from Camera")),
+                                                  Text("Upload from Camera",style: TextStyle(
+                                                      color: Colors.black))),
                                         ),
                                         ElevatedButton(
                                             onPressed: () => Get.back(),
-                                            child: Text("Cancel")),
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Colors.white,
+                                            ),
+                                            child: Text("Cancel",style: TextStyle(
+                                                color: Colors.black))),
                                       ]),
                                 ),
                               ),
                             ),
                           ),
                         );
+
+
                       },
                       child: controller.imageFile != null
                           ? CircleAvatar(
@@ -141,7 +167,7 @@ class _EditProfileState extends State<EditProfile> {
                             )
                           : CircleAvatar(
                               radius: 65,
-                              backgroundColor: customOrange,
+                              backgroundColor: customPurple,
                               backgroundImage: NetworkImage(
                                   userGetController.teamInfo.value[0].image),
                             ),
@@ -167,7 +193,7 @@ class _EditProfileState extends State<EditProfile> {
                       cInputAction: TextInputAction.next,
                       hintText: "",
                       caps: TextCapitalization.sentences,
-                      fillColour: customLightGrey,
+                      fillColour: formFieldLightGrey,
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 5, bottom: 5),
@@ -185,7 +211,7 @@ class _EditProfileState extends State<EditProfile> {
                       cInputAction: TextInputAction.next,
                       hintText: "",
                       caps: TextCapitalization.sentences,
-                      fillColour: customLightGrey,
+                      fillColour: formFieldLightGrey,
                     ),
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 5),
@@ -243,38 +269,44 @@ class _EditProfileState extends State<EditProfile> {
                     ElevatedButton(
                       onPressed: () {
                         if (controller.companyNameController.text.isEmpty) {
+                          // Get.snackbar(
+                          //   '',
+                          //   '',
+                          //   titleText: Text(
+                          //     "Incomplete Form",
+                          //     textAlign: TextAlign.center,
+                          //     style: Theme.of(context).textTheme.headline2,
+                          //   ),
+                          //   messageText: Text(
+                          //     "Team/Organisation name is required",
+                          //     textAlign: TextAlign.center,
+                          //     style: Theme.of(context).textTheme.headline3,
+                          //   ),
+                          // );
                           Get.snackbar(
-                            '',
-                            '',
-                            titleText: Text(
-                              "Incomplete Form",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline2,
-                            ),
-                            messageText: Text(
-                              "Team/Organisation name is required",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline3,
-                            ),
-                          );
+                              StringConstants.ERROR, "Please Enter Name",
+                              colorText: Colors.white);
                         } else if (controller
                             .companyDescriptionController.text.isEmpty) {
+                          // Get.snackbar(
+                          //   '',
+                          //   '',
+                          //   titleText: Text(
+                          //     "Incomplete Form",
+                          //     textAlign: TextAlign.center,
+                          //     style: Theme.of(context).textTheme.headline2,
+                          //   ),
+                          //   messageText: Text(
+                          //     "Team/Organisation description is required",
+                          //     textAlign: TextAlign.center,
+                          //     style: Theme.of(context).textTheme.headline3,
+                          //   ),
+                          // );
                           Get.snackbar(
-                            '',
-                            '',
-                            titleText: Text(
-                              "Incomplete Form",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline2,
-                            ),
-                            messageText: Text(
-                              "Team/Organisation description is required",
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context).textTheme.headline3,
-                            ),
-                          );
+                              StringConstants.ERROR, "Please Enter Discription",
+                              colorText: Colors.white);
                         } else if (dropDownValue == null) {
-                          Get.snackbar(
+                         /* Get.snackbar(
                             '',
                             '',
                             titleText: Text(
@@ -287,7 +319,10 @@ class _EditProfileState extends State<EditProfile> {
                               textAlign: TextAlign.center,
                               style: Theme.of(context).textTheme.headline3,
                             ),
-                          );
+                          );*/
+                          Get.snackbar(
+                              StringConstants.ERROR, "Please Enter Sports",
+                              colorText: Colors.white);
                         } else {
                          
                           controller.teamUpdate(Get.arguments["id"]);

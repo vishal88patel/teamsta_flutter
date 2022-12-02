@@ -5,6 +5,8 @@ import 'package:teamsta/constants/export_constants.dart';
 import 'package:teamsta/models/teamModel.dart';
 import 'package:teamsta/widgets/widgets.dart';
 
+import '../../../constants/string_constants.dart';
+
 class ContactNumbers extends StatefulWidget {
   @override
   State<ContactNumbers> createState() => _ContactNumbersState();
@@ -52,7 +54,6 @@ class _ContactNumbersState extends State<ContactNumbers> {
               color: primaryWhite,
               size: 30,
             )),
-
       ),
       body: Center(
         child: Padding(
@@ -87,7 +88,7 @@ class _ContactNumbersState extends State<ContactNumbers> {
                 cInputAction: TextInputAction.next,
                 hintText: "",
                 caps: TextCapitalization.none,
-                fillColour: customLightGrey,
+                fillColour: formFieldLightGrey,
               ),
               Text(
                 "Enter a name of your contact number",
@@ -100,7 +101,7 @@ class _ContactNumbersState extends State<ContactNumbers> {
                 // hintText: "EG: Main Office",
                 hintText: "",
                 caps: TextCapitalization.sentences,
-                fillColour: customLightGrey,
+                fillColour: formFieldLightGrey,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
@@ -109,26 +110,29 @@ class _ContactNumbersState extends State<ContactNumbers> {
                       FocusManager.instance.primaryFocus?.unfocus();
                       if (_contactName.text.isEmpty ||
                           _contactNumber.text.isEmpty) {
-                        Get.snackbar(
-                          '',
-                          '',
-                          titleText: Text(
-                            "Form Error",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline2!
-                                .copyWith(color: Colors.white),
-                          ),
-                          messageText: Text(
-                            "Please enter the contact details",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: Colors.white),
-                          ),
-                        );
+                        // Get.snackbar(
+                        //   '',
+                        //   '',
+                        //   titleText: Text(
+                        //     "Form Error",
+                        //     textAlign: TextAlign.center,
+                        //     style: Theme.of(context)
+                        //         .textTheme
+                        //         .headline2!
+                        //         .copyWith(color: Colors.white),
+                        //   ),
+                        //   messageText: Text(
+                        //     "Please enter the contact details",
+                        //     textAlign: TextAlign.center,
+                        //     style: Theme.of(context)
+                        //         .textTheme
+                        //         .headline3!
+                        //         .copyWith(color: Colors.white),
+                        //   ),
+                        // );
+                        Get.snackbar(StringConstants.ERROR,
+                            "Please Enter contact details",
+                            colorText: Colors.white);
                       } else {
                         controller.updateContactNumbers(
                             _contactName.text, _contactNumber.text);
@@ -167,7 +171,13 @@ class _ContactNumbersState extends State<ContactNumbers> {
                           );
                         } else
                           return Dismissible(
-                            background: Container(color: Colors.red),
+                            background: Container(
+                              color: Colors.red,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [Icon(Icons.delete,color: Colors.white,),SizedBox(width: 12,)],
+                              ),
+                            ),
                             onDismissed: (_) {
                               var id = teamController.phoneList.value[index].id;
                               if (teamController.phoneList.value.length > 0) {

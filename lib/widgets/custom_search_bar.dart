@@ -58,7 +58,7 @@ class CustomSearchBar extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .headline3!
-                  .copyWith(color: Colors.white),
+                  .copyWith(color: Colors.white.withOpacity(0.5)),
               autofocus: false,
               decoration: InputDecoration(
                 fillColor: Colors.transparent,

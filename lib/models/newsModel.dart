@@ -24,14 +24,14 @@ class NewsModel {
   Image? image;
 
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
-        id: json["id"],
-        title: json["title"],
-        description: json["description"],
-        url: json["url"],
-        imgUrl: json["img_url"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
-        userId: json["user_id"],
+        id: json["id"]??"",
+        title: json["title"]??"",
+        description: json["description"]??"",
+        url: json["url"]??"",
+        imgUrl: json["img_url"]??"",
+        createdAt: DateTime.parse(json["created_at"]??""),
+        updatedAt: DateTime.parse(json["updated_at"]??""),
+        userId: json["user_id"]??"",
         //TODO: this can be nullable. 
         // image can be nullabe
 
@@ -71,14 +71,14 @@ class Image {
   DateTime updatedAt;
 
   factory Image.fromJson(Map<String, dynamic> json) => Image(
-        id: json["id"],
-        newsId: json["news_id"],
+        id: json["id"]??"",
+        newsId: json["news_id"]??"",
         imgUrl:
             json["img_url"] != null ? imageBaseWithout + json["img_url"] : "",
-        caption: json["caption"],
-        notes: json["notes"],
-        createdAt: DateTime.parse(json["created_at"]),
-        updatedAt: DateTime.parse(json["updated_at"]),
+        caption: json["caption"]??"",
+        notes: json["notes"]??"",
+        createdAt: DateTime.parse(json["created_at"]??""),
+        updatedAt: DateTime.parse(json["updated_at"]??""),
       );
 
   Map<String, dynamic> toJson() => {

@@ -5,6 +5,8 @@ import 'package:teamsta/constants/export_constants.dart';
 import 'package:teamsta/models/teamModel.dart';
 import 'package:teamsta/widgets/widgets.dart';
 
+import '../../../constants/string_constants.dart';
+
 class ContactWebsites extends StatefulWidget {
   @override
   State<ContactWebsites> createState() => _ContactWebsitesState();
@@ -66,11 +68,11 @@ class _ContactWebsitesState extends State<ContactWebsites> {
               ),
               CustomFormField(
                 controller: _contactWebsite,
-                cKeyBoardType: TextInputType.number,
+                cKeyBoardType: TextInputType.text,
                 cInputAction: TextInputAction.next,
                 hintText: "",
                 caps: TextCapitalization.none,
-                fillColour: customLightGrey,
+                fillColour: formFieldLightGrey,
               ),
               Text(
                 "Enter a name of your web address EG: Main Office",
@@ -82,36 +84,43 @@ class _ContactWebsitesState extends State<ContactWebsites> {
                 cInputAction: TextInputAction.done,
                 hintText: "",
                 caps: TextCapitalization.sentences,
-                fillColour: customLightGrey,
+                fillColour: formFieldLightGrey,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20),
                 child: ElevatedButton(
                     onPressed: () {
                       FocusManager.instance.primaryFocus!.unfocus();
-                      if (_contactName.text.isEmpty ||
+                      if (
                           _contactWebsite.text.isEmpty) {
+                        // Get.snackbar(
+                        //   '',
+                        //   '',
+                        //   titleText: Text(
+                        //     "Form Error",
+                        //     textAlign: TextAlign.center,
+                        //     style: Theme.of(context)
+                        //         .textTheme
+                        //         .headline2!
+                        //         .copyWith(color: Colors.white),
+                        //   ),
+                        //   messageText: Text(
+                        //     "Please enter the contact details",
+                        //     textAlign: TextAlign.center,
+                        //     style: Theme.of(context)
+                        //         .textTheme
+                        //         .headline3!
+                        //         .copyWith(color: Colors.white),
+                        //   ),
+                        // );
                         Get.snackbar(
-                          '',
-                          '',
-                          titleText: Text(
-                            "Form Error",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline2!
-                                .copyWith(color: Colors.white),
-                          ),
-                          messageText: Text(
-                            "Please enter the contact details",
-                            textAlign: TextAlign.center,
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline3!
-                                .copyWith(color: Colors.white),
-                          ),
-                        );
-                      } else {
+                            StringConstants.ERROR, "Please Enter web name",
+                            colorText: Colors.white);
+                      } else if(_contactName.text.isEmpty){
+                        Get.snackbar(
+                            StringConstants.ERROR, "Please Enter web address",
+                            colorText: Colors.white);
+                      }else {
                         controller.updateWebsiteAddresses(
                             _contactName.text, _contactWebsite.text);
                         teamController.websiteList.value.add(
@@ -141,7 +150,13 @@ class _ContactWebsitesState extends State<ContactWebsites> {
                           return Spacer();
                         } else
                           return Dismissible(
-                            background: Container(color: Colors.red),
+                            background: Container(
+                              color: Colors.red,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [Icon(Icons.delete,color: Colors.white,),SizedBox(width: 12,)],
+                              ),
+                            ),
                             onDismissed: (_) {
                               print("Before: " + index.toString());
                               if (teamController.websiteList.value.length > 0) {

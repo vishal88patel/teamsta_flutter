@@ -27,7 +27,7 @@ class TeamNews extends StatelessWidget {
         title: Text("News"),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+        padding: EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
             Obx(
@@ -44,66 +44,69 @@ class TeamNews extends StatelessWidget {
                     ),
                   );
                 }
-                return ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: data.newsInfo.value.length,
-                  itemBuilder: (context, index) {
-                    if (data.isLoading == true) {
-                      return Center(
-                        child: CircularProgressIndicator(),
-                      );
-                    }
-                    return InkWell(
-                      onTap: () {
-                        /*   Get.dialog(
-                            barrierColor: Colors.transparent,
-                            CustomNewsDialog(comeFromEdit: true),
-                            arguments: {
-                              "title": data.newsInfo.value[index].title,
-                              "description":
-                                  data.newsInfo.value[index].description,
-                              "id": data.newsInfo.value[index].id,
-                              "url": data.newsInfo.value[index].url,
-                              "image": data.newsInfo.value[index].image != null
-                                  ? data.newsInfo.value[index].image!.imgUrl
-                                  : "",
-                              "imageId":
-                                  data.newsInfo.value[index].image != null
-                                      ? data.newsInfo.value[index].image!.id
-                                      : "",
-                            });*/
-                      },
-                      child: Dismissible(
-                        background: Container(
-                          color: Colors.red,
-                          child: Icon(
-                            Icons.delete,
-                            size: 40,
-                            color: Colors.white,
-                          ),
-                        ),
-                        key: UniqueKey(),
-                        onDismissed: (_) {
-                          if (data.newsInfo.value.length > 0) {
-                            data.deleteNews(data.newsInfo.value[index].id);
-                            data.newsInfo.value.removeAt(index);
-                          }
+                return Container(
+                  height: MediaQuery.of(context).size.height-200,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: data.newsInfo.value.length,
+                    itemBuilder: (context, index) {
+                      if (data.isLoading == true) {
+                        return Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                      return InkWell(
+                        onTap: () {
+                          /*   Get.dialog(
+                              barrierColor: Colors.transparent,
+                              CustomNewsDialog(comeFromEdit: true),
+                              arguments: {
+                                "title": data.newsInfo.value[index].title,
+                                "description":
+                                    data.newsInfo.value[index].description,
+                                "id": data.newsInfo.value[index].id,
+                                "url": data.newsInfo.value[index].url,
+                                "image": data.newsInfo.value[index].image != null
+                                    ? data.newsInfo.value[index].image!.imgUrl
+                                    : "",
+                                "imageId":
+                                    data.newsInfo.value[index].image != null
+                                        ? data.newsInfo.value[index].image!.id
+                                        : "",
+                              });*/
                         },
-                        child: Card(
-                          child: ListTile(
-                            title: Text(
-                              data.newsInfo.value[index].title,
-                              style: Theme.of(context).textTheme.headline2,
+                        child: Dismissible(
+                          background: Container(
+                            color: Colors.red,
+                            child: Icon(
+                              Icons.delete,
+                              size: 40,
+                              color: Colors.white,
                             ),
-                            subtitle: Text(
-                              "Published: ${data.newsInfo.value[index].createdAt}",
-                              style: Theme.of(context).textTheme.headline3,
+                          ),
+                          key: UniqueKey(),
+                          onDismissed: (_) {
+                            if (data.newsInfo.value.length > 0) {
+                              data.deleteNews(data.newsInfo.value[index].id);
+                              data.newsInfo.value.removeAt(index);
+                            }
+                          },
+                          child: Card(
+                            child: ListTile(
+                              title: Text(
+                                data.newsInfo.value[index].title,
+                                style: Theme.of(context).textTheme.headline2,
+                              ),
+                              subtitle: Text(
+                                "Published: ${data.newsInfo.value[index].createdAt}",
+                                style: Theme.of(context).textTheme.headline3,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 );
               },
             ),
@@ -276,7 +279,7 @@ class _CustomNewsDialogState extends State<CustomNewsDialog> {
                       ? Padding(
                           padding: EdgeInsets.symmetric(vertical: 10),
                           child: Container(
-                            height: 200,
+                            height: 150,
                             width: double.infinity,
                             decoration: BoxDecoration(
                               image: DecorationImage(
@@ -303,7 +306,7 @@ class _CustomNewsDialogState extends State<CustomNewsDialog> {
                       ? Padding(
                           padding: EdgeInsets.symmetric(vertical: 20),
                           child: Container(
-                            height: 200,
+                            height: 150,
                             width: double.infinity,
                             decoration: BoxDecoration(
                               image: DecorationImage(
