@@ -45,6 +45,7 @@ class NewsController extends GetxController {
           for (Map<String, dynamic> item in jsonResponse) {
             newsInfo.value.add(NewsModel.fromJson(item));
           }
+          newsInfo.value.refresh();
           isLoading.value = false;
           break;
         case 401:

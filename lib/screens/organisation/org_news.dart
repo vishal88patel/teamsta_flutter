@@ -45,7 +45,7 @@ class TeamNews extends StatelessWidget {
                   );
                 }
                 return Container(
-                  height: MediaQuery.of(context).size.height-200,
+                  height: MediaQuery.of(context).size.height-210,
                   child: ListView.builder(
                     shrinkWrap: true,
                     itemCount: data.newsInfo.value.length,
