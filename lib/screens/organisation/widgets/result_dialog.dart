@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:teamsta/constants/export_constants.dart';
 
 class ResultDialog extends StatelessWidget {
@@ -45,8 +47,17 @@ class ResultDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     print("index $index");
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Add Result"),
+      appBar:AppBar(
+        title: Text("Fixtures"),
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -55,7 +66,7 @@ class ResultDialog extends StatelessWidget {
           children: [
             Container(
               padding: EdgeInsets.all(10),
-              height: 80,
+              height: 85,
               width: double.infinity,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
@@ -86,8 +97,8 @@ class ResultDialog extends StatelessWidget {
                 isScroll: false,
                 labels: ["Win", "Draw", "Lose"],
                 borderRadius: 15,
-                unSelectedBackgroundColors: [Colors.white.withOpacity(.3)],
-                selectedBackgroundColors: [customPurple],
+                unSelectedBackgroundColors: [formFieldLightGrey],
+                selectedBackgroundColors: [ _selectedIndex.value==0?Colors.green: _selectedIndex.value==1?customPurple:Colors.red],
                 unSelectedTextStyle: Theme.of(context).textTheme.headline3!,
                 selectedIndex: _selectedIndex.value,
                 selectedLabelIndex: (index) {
@@ -118,7 +129,7 @@ class ResultDialog extends StatelessWidget {
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        fillColor: customLightGrey,
+                        fillColor: formFieldLightGrey,
                       ),
                     ),
                   )
@@ -141,7 +152,7 @@ class ResultDialog extends StatelessWidget {
                       textAlign: TextAlign.center,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        fillColor: customLightGrey,
+                        fillColor: formFieldLightGrey,
                       ),
                     ),
                   )

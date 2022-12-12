@@ -10,3 +10,22 @@ update contactEmail Api Integration
 show profile Api Integration
 Find Api Intrgration -- data list is coming empty so data will not show as of now
 Chat Api Integration -- data list is coming empty so data will not show as of now
+
+Organization part is Done
+
+Acocount: test2@gmail.com,
+
+Address Screen done
+Team member Screen Done
+Service Screen done
+News Screen Done
+Add Service done
+get Service done
+ApiEndPoint:- teams/id == 500 internal server error ,id=80;
+ApiEndPoint:- services/id == update service is not working ,id=65;
+Delete Account Done
+Logout Done
+Please provide privacy policy link
+Please provide  terms and condition link
+Find(Location) Screen Done ,but please provide Google map Valid Api key
+Message Screen Done, Data is not Comming coz Google map api key is either Expired or invalid

@@ -199,7 +199,7 @@ class _FixtureCreateFormState extends State<FixtureCreateForm> {
                           "Please enter Time",
                           colorText: Colors.white);
                     }
-                    else if (imageFile.isEmpty) {
+                    else if ( widget.comeFromEdit!=true && imageFile.isEmpty) {
                       Get.snackbar(StringConstants.ERROR,
                           "Please enter Fixture Images",
                           colorText: Colors.white);

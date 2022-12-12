@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:ui';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
@@ -81,6 +82,15 @@ class ResultsForm extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Results Form"),
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -94,7 +104,7 @@ class ResultsForm extends StatelessWidget {
                   padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey[200],
+                    color: formFieldLightGrey,
                   ),
                   height: 100,
                   width: double.infinity,
@@ -132,7 +142,7 @@ class ResultsForm extends StatelessWidget {
                   height: 40,
                   width: 90,
                   begin: Alignment.center,
-                  selectedBackgroundColors: [customPurple],
+                  selectedBackgroundColors: [ _selectedIndex.value==0?Colors.green: _selectedIndex.value==1?customPurple:Colors.red],
                 ),
               ),
               Padding(
@@ -152,7 +162,7 @@ class ResultsForm extends StatelessWidget {
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           hintText: Get.arguments['homeScore'].toString(),
-                          fillColor: customLightGrey,
+                          fillColor: formFieldLightGrey,
                         ),
                       ),
                     ),
@@ -176,7 +186,7 @@ class ResultsForm extends StatelessWidget {
                         keyboardType: TextInputType.number,
                         decoration: InputDecoration(
                           hintText: Get.arguments['opponentScore'].toString(),
-                          fillColor: customLightGrey,
+                          fillColor: formFieldLightGrey,
                         ),
                       ),
                     ),

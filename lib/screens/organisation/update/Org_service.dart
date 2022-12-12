@@ -9,9 +9,9 @@ class TeamServicesCreate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (servicesController.servicesList.value.isEmpty) {
+
       servicesController.userServicesApi();
-    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Services"),
@@ -74,18 +74,65 @@ class TeamServicesCreate extends StatelessWidget {
                         servicesController.servicesList.value.removeAt(index);
                       }
                     },
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(vertical: 5),
-                      child: Card(
-                        child: ListTile(
-                          title: Text(
-                            servicesController.servicesList.value[index].title,
-                            style: Theme.of(context).textTheme.headline2,
-                          ),
-                          subtitle: Text(
-                            servicesController
-                                .servicesList.value[index].description,
-                            style: Theme.of(context).textTheme.headline3,
+                    child: InkWell(
+                      onTap: (){
+                        var data = {
+                          "title": servicesController
+                              .servicesList.value[index].title,
+                          "description": servicesController
+                              .servicesList.value[index].description,
+                          "id": servicesController.servicesList.value[index].id,
+                          "sport": servicesController
+                              .servicesList.value[index].sport_or_activity,
+                          "sex":
+                          servicesController.servicesList.value[index].sex,
+                          "age1": servicesController
+                              .servicesList.value[index].age
+                              .split("-")[0],
+                          "age2": servicesController
+                              .servicesList.value[index].age
+                              .split("-")[1],
+                          "ability": servicesController
+                              .servicesList.value[index].ability,
+                          "available": servicesController
+                              .servicesList.value[index].repeating_day,
+                          "when":
+                          servicesController.servicesList.value[index].date,
+                          "address_line_1": servicesController
+                              .servicesList.value[index].addressLineOne,
+                          "address_line_2": servicesController
+                              .servicesList.value[index].addressLineTwo,
+                          "city_or_town": servicesController
+                              .servicesList.value[index].city_or_town,
+                          "county": servicesController
+                              .servicesList.value[index].county,
+                          "postcode": servicesController
+                              .servicesList.value[index].postcode,
+                          "time":
+                          servicesController.servicesList.value[index].time,
+                          "isUser": true,
+                          "userEdit": true
+                        };
+                        // get to the edit form not the service page.
+
+                        Get.dialog(
+                            barrierColor: Colors.transparent,
+                            AddService(isTeam: false.obs),
+                            arguments: data);
+                      },
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 5),
+                        child: Card(
+                          child: ListTile(
+                            title: Text(
+                              servicesController.servicesList.value[index].title,
+                              style: Theme.of(context).textTheme.headline2,
+                            ),
+                            subtitle: Text(
+                              servicesController
+                                  .servicesList.value[index].description,
+                              style: Theme.of(context).textTheme.headline3,
+                            ),
                           ),
                         ),
                       ),
@@ -101,10 +148,25 @@ class TeamServicesCreate extends StatelessWidget {
             child: ElevatedButton(
               child: Text("Add Service"),
               onPressed: () {
+
+                servicesController.titleController.clear();
+                servicesController.descriptionController.clear();
+
+                servicesController.address_line_1.clear();
+                servicesController.address_line_2.clear();
+                servicesController.town_or_city.clear();
+                servicesController.county.clear();
+                servicesController.postcode.clear();
+                servicesController.dateController.clear();
+
+                servicesController.abilityController.clear();
+                servicesController.sexController.clear();
+                servicesController.timeController.clear();
+
                 Get.dialog(
                     barrierColor: Colors.transparent,
                     AddService(
-                      isTeam: true.obs,
+                      isTeam: true.obs
                     ));
               },
             ),

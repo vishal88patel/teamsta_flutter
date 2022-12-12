@@ -521,7 +521,10 @@ class _RegistrationPageState extends State<RegistrationPage> {
                           } else if (_formKey.currentState!.validate()) {
                             if (user.value == true) {
                               boxTeamMember.write("isTeam", false);
-                              controller.registerUser();
+                              Get.snackbar(
+                                  StringConstants.ERROR, "Please Register As A Organization",
+                                  colorText: Colors.white);
+                              // controller.registerUser();
                             } else if (organisation.value == true) {
                               boxTeamMember.write("isTeam", true);
                               var data = {

@@ -75,7 +75,7 @@ class TeamResultsList extends StatelessWidget {
                   key: UniqueKey(),
                   child: Container(
                     padding: EdgeInsets.all(10),
-                    height: 125,
+                    height: 130,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       border: Border.all(color: customLightGrey, width: 2),

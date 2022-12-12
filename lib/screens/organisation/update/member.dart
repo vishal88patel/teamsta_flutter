@@ -30,7 +30,6 @@ class Members extends StatelessWidget {
               color: primaryWhite,
               size: 30,
             )),
-
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -219,6 +218,15 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
     return Scaffold(
       appBar: AppBar(
         title: Get.arguments['edit'] ? Text("Edit Member") : Text("Add Member"),
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -238,7 +246,7 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
               cInputAction: TextInputAction.next,
               hintText: "",
               caps: TextCapitalization.sentences,
-              fillColour: customLightGrey,
+              fillColour: formFieldLightGrey,
             ),
             Padding(
               padding: EdgeInsets.only(top: 20),
@@ -256,11 +264,12 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
               child: TextField(
                 controller: _bioController,
                 keyboardType: TextInputType.multiline,
-                minLines: 1, //Normal textInputField will be displayed
+                minLines: 1,
+                //Normal textInputField will be displayed
                 maxLines: 5,
                 decoration: InputDecoration(
                     fillColor:
-                        customLightGrey), // when user presses enter it will adapt to it
+                        formFieldLightGrey), // when user presses enter it will adapt to it
               ),
             ),
             Padding(
@@ -276,7 +285,7 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
               cInputAction: TextInputAction.next,
               hintText: "",
               caps: TextCapitalization.sentences,
-              fillColour: customLightGrey,
+              fillColour: formFieldLightGrey,
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: 20),
@@ -300,7 +309,12 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
                                               await imageFromGallery();
                                               Get.back();
                                             },
-                                            child: Text("Upload from Gallery")),
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Colors.white,
+                                            ),
+                                            child: Text("Upload from Gallery",
+                                                style: TextStyle(
+                                                    color: Colors.black))),
                                         Padding(
                                           padding: EdgeInsets.symmetric(
                                               vertical: 15),
@@ -309,12 +323,20 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
                                                 await imageFromCamera();
                                                 Get.back();
                                               },
+                                              style: ElevatedButton.styleFrom(
+                                                primary: Colors.white,
+                                              ),
                                               child:
-                                                  Text("Upload from Camera")),
+                                                  Text("Upload from Camera",style: TextStyle(
+                                                      color: Colors.black))),
                                         ),
                                         ElevatedButton(
                                             onPressed: () => Get.back(),
-                                            child: Text("Cancel")),
+                                            style: ElevatedButton.styleFrom(
+                                              primary: Colors.white,
+                                            ),
+                                            child: Text("Cancel",style: TextStyle(
+                                                color: Colors.black))),
                                       ]),
                                 ),
                               ),
@@ -354,8 +376,12 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
                                                   await imageFromGallery();
                                                   Get.back();
                                                 },
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Colors.white,
+                                                ),
                                                 child: Text(
-                                                    "Upload from Gallery")),
+                                                    "Upload from Gallery",style: TextStyle(
+                                                    color: Colors.black))),
                                             Padding(
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 15),
@@ -364,12 +390,20 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
                                                     await imageFromCamera();
                                                     Get.back();
                                                   },
+                                                  style: ElevatedButton.styleFrom(
+                                                    primary: Colors.white,
+                                                  ),
                                                   child: Text(
-                                                      "Upload from Camera")),
+                                                      "Upload from Camera",style: TextStyle(
+                                                      color: Colors.black))),
                                             ),
                                             ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Colors.white,
+                                                ),
                                                 onPressed: () => Get.back(),
-                                                child: Text("Cancel")),
+                                                child: Text("Cancel",style: TextStyle(
+                                                    color: Colors.black))),
                                           ]),
                                     ),
                                   ),
@@ -411,8 +445,12 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
                                                   await imageFromGallery();
                                                   Get.back();
                                                 },
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Colors.white,
+                                                ),
                                                 child: Text(
-                                                    "Upload from Gallery")),
+                                                    "Upload from Gallery",style: TextStyle(
+                                                    color: Colors.black))),
                                             Padding(
                                               padding: EdgeInsets.symmetric(
                                                   vertical: 15),
@@ -421,12 +459,20 @@ class _AddMemberDialogState extends State<AddMemberDialog> {
                                                     await imageFromCamera();
                                                     Get.back();
                                                   },
+                                                  style: ElevatedButton.styleFrom(
+                                                    primary: Colors.white,
+                                                  ),
                                                   child: Text(
-                                                      "Upload from Camera")),
+                                                      "Upload from Camera",style: TextStyle(
+                                                      color: Colors.black))),
                                             ),
                                             ElevatedButton(
+                                                style: ElevatedButton.styleFrom(
+                                                  primary: Colors.white,
+                                                ),
                                                 onPressed: () => Get.back(),
-                                                child: Text("Cancel")),
+                                                child: Text("Cancel",style: TextStyle(
+                                                    color: Colors.black))),
                                           ]),
                                     ),
                                   ),

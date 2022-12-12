@@ -394,6 +394,7 @@ class ServicesController extends GetxController {
     var jsonResponse = jsonDecode(response.body);
 
     try {
+      servicesList.value.clear();
       switch (response.statusCode) {
         case 200:
           servicesList.value.clear();

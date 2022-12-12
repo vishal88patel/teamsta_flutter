@@ -89,7 +89,7 @@ class TeamFixturesList extends StatelessWidget {
                                   padding: EdgeInsets.all(0),
                                 ),
                                 onPressed: () {
-                                /*  Get.to(FixtureCreateForm(comeFromEdit: true),
+                                  Get.to(FixtureCreateForm(comeFromEdit: true),
                                       arguments: {
                                         "opponent": fixtureController
                                             .fixtureInfo.value[index].vs,
@@ -120,7 +120,7 @@ class TeamFixturesList extends StatelessWidget {
                                         "fixtureId": fixtureController
                                             .fixtureInfo.value[index].id,
                                         "card_index": index,
-                                      });*/
+                                      });
                                 },
                                 icon: Icon(
                                   Icons.edit,
@@ -139,7 +139,7 @@ class TeamFixturesList extends StatelessWidget {
                                   padding: EdgeInsets.all(0),
                                 ),
                                 onPressed: () {
-                                 /* Get.to(
+                                  Get.to(
                                     ResultDialog(
                                       index: index,
                                     ),
@@ -174,7 +174,7 @@ class TeamFixturesList extends StatelessWidget {
                                           .fixtureInfo.value[index].description,
                                       "listIndex": index,
                                     },
-                                  );*/
+                                  );
                                 },
                                 icon: Icon(
                                   Icons.add,

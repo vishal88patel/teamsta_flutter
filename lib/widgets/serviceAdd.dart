@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
@@ -27,7 +28,7 @@ class _AddServiceState extends State<AddService> {
   TextEditingController age2 = TextEditingController();
 
   setControllers() {
-    if (Get.arguments['userEdit'] == true) {
+    if (Get.arguments!=null && Get.arguments['userEdit'] == true) {
       servicesController.titleController.text = Get.arguments['title'];
       servicesController.descriptionController.text =
           Get.arguments['description'];
@@ -58,10 +59,19 @@ class _AddServiceState extends State<AddService> {
     return Scaffold(
       appBar: AppBar(
         title: Text("My Services"),
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
         actions: [
           Padding(
             padding: EdgeInsets.all(10),
-            child: Text(Get.arguments['id'].toString()),
+            child: Text(Get.arguments!=null?Get.arguments['id'].toString():""),
           )
         ],
       ),
@@ -100,7 +110,7 @@ class _AddServiceState extends State<AddService> {
                     width: mobileWidth - 40,
                     height: 50,
                     decoration: BoxDecoration(
-                        color: customLightGrey,
+                        color: formFieldLightGrey,
                         borderRadius: BorderRadius.circular(10)),
                     child: DropdownButton(
                       hint: Text(
@@ -314,11 +324,11 @@ class _AddServiceState extends State<AddService> {
                 child: ElevatedButton(
                   onPressed: () {
                     String age = age1.text + "-" + age2.text;
-                    if (Get.arguments['userEdit'] == false ||
-                        Get.arguments['userEdit'] == null) {
+                    if (Get.arguments== null ||Get.arguments['userEdit'] == false) {
                       servicesController.createService(age).then((_) {
                         age1.clear();
                         age2.clear();
+                        servicesController.userServicesApi();
                       });
                     } else {
                       servicesController
@@ -326,6 +336,8 @@ class _AddServiceState extends State<AddService> {
                           .then((_) {
                         age1.clear();
                         age2.clear();
+                        Get.back();
+                        servicesController.userServicesApi();
                       });
                     }
 
@@ -334,7 +346,7 @@ class _AddServiceState extends State<AddService> {
                   },
                   child: servicesController.isSetLoading.value
                       ? CircularProgressIndicator(color: Colors.white)
-                      : Get.arguments['userEdit']
+                      : Get.arguments != null&& Get.arguments['userEdit']
                           ? Text("Update")
                           : Text("Save"),
                 ),

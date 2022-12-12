@@ -146,8 +146,9 @@ class Information {
         if (boxTeamMember.read("isTeam") == null &&
             responseJson["user"]["user_role"] == "TeamUser") {
           boxTeamMember.write("isTeam", true);
-          if (boxPending.read("isPending") == true ||
-              boxPending.read("isPending") == null) {
+         /* if (boxPending.read("isPending") == true ||
+              boxPending.read("isPending") == null) {*/
+            if (responseJson["user"]["is_approved"] != "approved") {
             accessToken = await responseJson['access_token'];
             print(accessToken);
             boxAccessToken.write("accessToken", accessToken);
@@ -191,7 +192,12 @@ class Information {
           clearControllers();
           Get.offAllNamed("/nav");
         }
-      } else {
+      } else if(response.statusCode == 400){
+        Get.snackbar(
+            StringConstants.ERROR,responseJson['message'].toString(),
+            colorText: Colors.white);
+      }else{
+        Get.offNamed("/pending");
         Get.snackbar(
             StringConstants.ERROR,responseJson['message'].toString(),
             colorText: Colors.white);
@@ -217,7 +223,7 @@ class Information {
     boxPending.erase();
     boxHomeAddress.erase();
     boxLastLocation.erase();
-    Get.offAllNamed('/');
+    Get.offAllNamed('/login');
   }
 
   //* delete a user account
@@ -331,7 +337,7 @@ class Information {
           Get.back();
           print(response.body);
           Get.snackbar(
-              response.statusCode.toString(), response.reasonPhrase.toString(),
+              response.statusCode.toString(), jsonResponse['errors']['email'][0].toString(),
               colorText: Colors.white, duration: Duration(seconds: 3));
       }
     } catch (e) {

@@ -273,12 +273,12 @@ class ResultsController extends GetxController {
       headers: appHeaders,
     );
 
-    var jsonResponse = json.decode(response.body);
+    // var jsonResponse = json.decode(response.body);
 
     try {
       switch (response.statusCode) {
         case 200:
-          print(jsonResponse);
+          // print(jsonResponse);
           break;
         case 401:
           print("401: ${response.reasonPhrase}");

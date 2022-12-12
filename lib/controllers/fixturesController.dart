@@ -1,10 +1,12 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
 import 'package:http/http.dart' as http;
 
+import '../constants/string_constants.dart';
 import '../models/fixtureModel.dart';
 
 class FixturesController extends GetxController {
@@ -359,12 +361,15 @@ class FixturesController extends GetxController {
       headers: appHeaders,
     );
 
-    var jsonResponse = json.decode(response.body);
+    // var jsonResponse = json.decode(response.body);
 
     try {
       switch (response.statusCode) {
-        case 200:
-          print(jsonResponse);
+        // case 200:
+        //   // print(jsonResponse);
+        //   break;
+          case 204:
+          // print(jsonResponse);
           break;
         case 401:
           boxAccessToken.erase();
@@ -376,7 +381,10 @@ class FixturesController extends GetxController {
 
         default:
           Get.snackbar(
-              response.statusCode.toString(), response.reasonPhrase.toString());
+              StringConstants.ERROR, response.reasonPhrase.toString(),
+              colorText: Colors.white);
+          // Get.snackbar(
+          //     response.statusCode.toString(), response.reasonPhrase.toString());
       }
     } catch (e) {
       print("Error ----> $e");

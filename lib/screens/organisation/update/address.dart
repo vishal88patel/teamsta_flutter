@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,6 +25,15 @@ class _AddressSetupState extends State<AddressSetup> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Address"),
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
       ),
       body: Center(
         child: Padding(
@@ -56,7 +66,7 @@ class _AddressSetupState extends State<AddressSetup> {
                   cInputAction: TextInputAction.next,
                   hintText: "",
                   caps: TextCapitalization.words,
-                  fillColour: customLightGrey,
+                  fillColour: formFieldLightGrey,
                 ),
                 Text(
                   "Address line 2",
@@ -68,7 +78,7 @@ class _AddressSetupState extends State<AddressSetup> {
                   cInputAction: TextInputAction.next,
                   hintText: "",
                   caps: TextCapitalization.words,
-                  fillColour: customLightGrey,
+                  fillColour: formFieldLightGrey,
                 ),
                 Text(
                   "Town/City",
@@ -80,7 +90,7 @@ class _AddressSetupState extends State<AddressSetup> {
                   cInputAction: TextInputAction.next,
                   hintText: "",
                   caps: TextCapitalization.words,
-                  fillColour: customLightGrey,
+                  fillColour: formFieldLightGrey,
                 ),
                 Text(
                   "County",
@@ -92,7 +102,7 @@ class _AddressSetupState extends State<AddressSetup> {
                   cInputAction: TextInputAction.next,
                   hintText: "",
                   caps: TextCapitalization.words,
-                  fillColour: customLightGrey,
+                  fillColour: formFieldLightGrey,
                 ),
                 Text(
                   "Postcode",
@@ -104,7 +114,7 @@ class _AddressSetupState extends State<AddressSetup> {
                   cInputAction: TextInputAction.done,
                   hintText: "",
                   caps: TextCapitalization.words,
-                  fillColour: customLightGrey,
+                  fillColour: formFieldLightGrey,
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 10),

@@ -84,14 +84,14 @@ class TeamMore extends StatelessWidget {
                       "postcode":
                           userGetController.teamInfo.value[0].team.postcode,
                     };
-                    // Get.to(AddressSetup(), arguments: data);
+                    Get.to(AddressSetup(), arguments: data);
                   }),
               CustomMoreCard(
                   title: "Team Members",
                   subtitle: "",
                   isSubtitle: false,
                   function: () {
-                    // Get.to(Members());
+                    Get.to(Members());
                   }),
               CustomMoreCard(
                   title: "Services",
@@ -168,7 +168,7 @@ class TeamMore extends StatelessWidget {
                           height: 300,
                           width: 300,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: Colors.grey[500],
                             borderRadius: BorderRadius.circular(15),
                           ),
                           child: Padding(
@@ -178,8 +178,8 @@ class TeamMore extends StatelessWidget {
                               children: [
                                 Spacer(),
                                 Text(
-                                  "Are you sure you want to delete your account?",
-                                  style: Theme.of(context).textTheme.headline3!,
+                                  "Are you sure! you want to delete this account?",
+                                  style: Theme.of(context).textTheme.headline3!.copyWith(color: Colors.white),
                                   textAlign: TextAlign.center,
                                 ),
                                 Spacer(),
@@ -222,7 +222,7 @@ class TeamMore extends StatelessWidget {
                   }),
               ElevatedButton(
                 onPressed: () {
-                  // controller.logout();
+                  controller.logout();
                 },
                 child: Text("Logout"),
               ),
