@@ -35,7 +35,7 @@
             android:value="2" />
              <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value= "AIzaSyBjaY2nvifrAJMYXnwyBazoUbPxKAggNVU" />
+            android:value= "AIzaSyAyEd5kZdJHd5-dQGYj4DZuVxWLFxS-4eY" />
     </application>
     <queries>
   <!-- If your app checks for call support -->

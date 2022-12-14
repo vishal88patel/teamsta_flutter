@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:maps_launcher/maps_launcher.dart';
@@ -29,6 +30,15 @@ class TeamServicePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Services"),
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),

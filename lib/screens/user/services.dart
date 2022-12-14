@@ -187,63 +187,67 @@ class CustomServiceCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 5),
-      child: Container(
-        height: 80,
-        decoration: BoxDecoration(
-          border: Border.all(color: customLightGrey, width: 2),
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Row(
-            children: [
-              Container(
-                width: mobileWidth / 3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title1!,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    Text(
-                      subtitle1!,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline2!
-                          .copyWith(color: customOrange),
-                    )
-                  ],
-                ),
+    return Container(
+      height: 80,
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white, width: 2),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: customLightGrey, width: 2),
+                borderRadius: BorderRadius.circular(15),
               ),
-              const SizedBox(width: 50),
-              Container(
-                width: mobileWidth / 3,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title2!,
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                    Text(
-                      subtitle2!,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline2!
-                          .copyWith(color: customOrange),
-                    )
-                  ],
-                ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    title1!,
+                    style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 16),
+                  ),
+                  Text(
+                    subtitle1!,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline2!
+                        .copyWith(color: customOrange,fontSize: 22,fontWeight: FontWeight.bold),
+                  )
+                ],
               ),
-              Spacer(),
-            ],
+            ),
           ),
-        ),
+          SizedBox(width: 16,),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border.all(color: customLightGrey, width: 2),
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    title2!,
+                    style: Theme.of(context).textTheme.headline2!.copyWith(fontSize: 16),
+                  ),
+                  Text(
+                    subtitle2!,
+                    style: Theme.of(context)
+                        .textTheme
+                        .headline2!
+                        .copyWith(color: customOrange,fontSize: 22,fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+          ),
+
+        ],
       ),
     );
   }

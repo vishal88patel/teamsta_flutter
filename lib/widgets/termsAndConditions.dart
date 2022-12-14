@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
@@ -14,6 +15,15 @@ class TermsAndConditions extends StatelessWidget {
     print(Get.arguments["isMore"]);
     return Scaffold(
       appBar: AppBar(
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
         backgroundColor:
             Get.arguments["isMore"] == true ? customOrange : Colors.white,
         automaticallyImplyLeading:

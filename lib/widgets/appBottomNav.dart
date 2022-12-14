@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:search_map_location/search_map_location.dart';
@@ -71,7 +72,16 @@ class CustomBottomSearch extends StatelessWidget {
                     onPressed: () {
                       Get.to(
                         Scaffold(
-                          appBar: AppBar(),
+                          appBar: AppBar(
+                            leading: InkWell(
+                                onTap: () {
+                                  Get.back();
+                                },
+                                child: Icon(
+                                  CupertinoIcons.chevron_back,
+                                  color: primaryWhite,
+                                  size: 30,
+                                )),                          ),
                           body: Container(
                             child: ListView.builder(
                               itemCount: itemCount,
@@ -161,7 +171,17 @@ class CustomLocationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: Icon(
+              CupertinoIcons.chevron_back,
+              color: primaryWhite,
+              size: 30,
+            )),
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20),
         child: Column(

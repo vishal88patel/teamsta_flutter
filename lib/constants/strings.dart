@@ -63,7 +63,8 @@ String env(String key) {
     case "APP_KEY":
       return "base64:AhBe91u5Y0vvxrojQTgPkYrSJxM7P+iJaSi1sMYjTwA=";
     case "GoogleKey":
-      return "AIzaSyBjaY2nvifrAJMYXnwyBazoUbPxKAggNVU";
+      // return "AIzaSyBjaY2nvifrAJMYXnwyBazoUbPxKAggNVU";
+      return "AIzaSyAyEd5kZdJHd5-dQGYj4DZuVxWLFxS-4eY";
     default:
       return "";
   }

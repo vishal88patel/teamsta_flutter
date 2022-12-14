@@ -144,7 +144,7 @@ class TeamMore extends StatelessWidget {
                     var data = {
                       "isMore": true,
                     };
-                    // Get.toNamed("/terms", arguments: data);
+                    Get.toNamed("/terms", arguments: data);
                   }),
               CustomMoreCard(
                   title: "Privacy Policy",
@@ -154,7 +154,7 @@ class TeamMore extends StatelessWidget {
                     var data = {
                       "isMore": true,
                     };
-                    // Get.toNamed("/privacy", arguments: data);
+                    Get.toNamed("/privacy", arguments: data);
                   }),
               CustomMoreCard(
                   title: "Delete Account",
