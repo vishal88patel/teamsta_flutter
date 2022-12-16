@@ -1,11 +1,21 @@
 import 'package:get/get.dart';
-import 'package:teamsta/screens/page_exports.dart';
+import 'package:teamsta/representation/page_exports.dart';
+import 'package:teamsta/representation/userScreens/clubView.dart';
+import 'package:teamsta/representation/userScreens/fixtures_page.dart';
+import 'package:teamsta/representation/userScreens/in_app_chat.dart';
+import 'package:teamsta/representation/userScreens/messaging.dart';
+import 'package:teamsta/representation/userScreens/news_page.dart';
+import 'package:teamsta/representation/userScreens/results_page.dart';
+import 'package:teamsta/representation/userScreens/services.dart';
+import 'package:teamsta/representation/userScreens/settings.dart';
+import 'package:teamsta/representation/userScreens/team_bio_page.dart';
+import 'package:teamsta/representation/userScreens/user_service.dart';
 import 'package:teamsta/widgets/widgets.dart';
 
-import '../screens/auth/login.dart';
-import '../screens/auth/registration.dart';
-import '../screens/auth/splashScreen.dart';
-import '../screens/organisation/widgets/widgets.dart';
+import '../representation/authScreens/loginScreen.dart';
+import '../representation/authScreens/registrationScreen.dart';
+import '../representation/authScreens/splashScreen.dart';
+import '../representation/organisationScreens/widgets/fixture_form.dart';
 
 part './routing.dart';
 

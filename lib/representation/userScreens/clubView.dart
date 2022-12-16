@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/global/lists/clubViewList.dart';
 import 'package:tuple/tuple.dart';
+
+import '../../Global/GlobalList/clubViewList.dart';
 
 class ClubView extends StatelessWidget {
   const ClubView({

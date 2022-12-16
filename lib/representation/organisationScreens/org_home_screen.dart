@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/screens/organisation/widgets/TeamResults.dart';
-import 'package:teamsta/screens/organisation/widgets/widgets.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/TeamFixtures.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/TeamResults.dart';
 
 class OrgHomePage extends StatelessWidget {
   const OrgHomePage({Key? key}) : super(key: key);

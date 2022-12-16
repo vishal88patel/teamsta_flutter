@@ -3,7 +3,7 @@
 // import 'package:get/get.dart';
 // import 'package:teamsta/models/servicesModels.dart';
 
-// import '../constants/strings.dart';
+// import '../constants/global_strings.dart';
 
 // import 'package:http/http.dart' as http;
 

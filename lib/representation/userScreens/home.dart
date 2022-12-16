@@ -3,12 +3,12 @@ import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:teamsta/constants/export_constants.dart';
 import 'package:teamsta/controllers/getTeamInfoController.dart';
-import 'package:teamsta/global/lists/category_list.dart';
 
 import 'package:teamsta/widgets/appBottomNav.dart';
 import 'package:teamsta/widgets/getLatLng.dart';
 import 'package:teamsta/widgets/getLocation.dart';
 
+import '../../Global/GlobalList/category_list.dart';
 import '../../widgets/widgets.dart';
 
 TextEditingController homeSearchController = TextEditingController();

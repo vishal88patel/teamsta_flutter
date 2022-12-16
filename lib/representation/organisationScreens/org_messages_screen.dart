@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/controllers.dart';
 import 'package:teamsta/controllers/chatController.dart';
-import 'package:teamsta/screens/organisation/org_in_app_chat.dart';
-import 'package:teamsta/screens/page_exports.dart';
+import 'package:teamsta/representation/page_exports.dart';
+import 'package:teamsta/representation/userScreens/in_app_chat.dart';
+
+import 'org_in_app_chat_screen.dart';
 
 class TeamMessages extends StatefulWidget {
   const TeamMessages({Key? key}) : super(key: key);

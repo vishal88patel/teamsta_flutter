@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teamsta/constants/boxes.dart';
+import 'package:teamsta/constants/prefrence_box.dart';
 import 'package:teamsta/constants/colors.dart';
 import 'package:teamsta/constants/controllers.dart';
 import 'package:teamsta/constants/images.dart';
 
-import '../../constants/strings.dart';
+import '../../constants/global_strings.dart';
 
 class PendingPage extends StatefulWidget {
   const PendingPage({Key? key}) : super(key: key);

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
 import 'package:teamsta/global/services_list.dart';
-import 'package:teamsta/screens/organisation/widgets/dateTimeFields.dart';
-import 'package:teamsta/screens/organisation/widgets/fixture_switcher.dart';
-import 'package:teamsta/screens/organisation/widgets/fixturesLargeTextBox.dart';
-import 'package:teamsta/screens/organisation/widgets/textFormWithTopText.dart';
+
+import '../representation/organisationScreens/widgets/dateTimeFields.dart';
+import '../representation/organisationScreens/widgets/fixture_switcher.dart';
+import '../representation/organisationScreens/widgets/fixturesLargeTextBox.dart';
+import '../representation/organisationScreens/widgets/textFormWithTopText.dart';
+
 
 class AddService extends StatefulWidget {
   const AddService({

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:teamsta/global/services_list.dart';
-import 'package:teamsta/screens/organisation/teamServicePage.dart';
+import 'package:teamsta/representation/organisationScreens/teamServicePage_screen.dart';
 import 'package:teamsta/widgets/appBottomNav.dart';
 import 'package:teamsta/widgets/getLatLng.dart';
 

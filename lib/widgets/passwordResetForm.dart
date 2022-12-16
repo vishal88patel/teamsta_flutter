@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:teamsta/constants/boxes.dart';
+import 'package:teamsta/constants/prefrence_box.dart';
 import 'package:teamsta/widgets/widgets.dart';
 
-import '../constants/constraints.dart';
+import '../constants/dimensions.dart';
 import '../constants/controllers.dart';
 
 class NewPasswordForm extends StatefulWidget {

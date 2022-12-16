@@ -1,19 +1,20 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:teamsta/constants/boxes.dart';
+import 'package:teamsta/constants/prefrence_box.dart';
 import 'package:teamsta/constants/images.dart';
-import 'package:teamsta/screens/organisation/org_home.dart';
-import 'package:teamsta/screens/organisation/org_news.dart';
-import 'package:teamsta/screens/user/find.dart';
-import 'package:teamsta/screens/user/following.dart';
-import 'package:teamsta/screens/user/home.dart';
-import 'package:teamsta/screens/user/messaging.dart';
-import 'package:teamsta/screens/user/morePage.dart';
+import 'package:teamsta/representation/userScreens/find.dart';
+import 'package:teamsta/representation/userScreens/following.dart';
+import 'package:teamsta/representation/userScreens/home.dart';
+import 'package:teamsta/representation/userScreens/messaging.dart';
+import 'package:teamsta/representation/userScreens/morePage.dart';
 
 import '../constants/colors.dart';
-import '../screens/organisation/org_find.dart';
-import '../screens/organisation/org_messages.dart';
-import '../screens/organisation/org_more.dart';
+import '../representation/organisationScreens/org_find_screen.dart';
+import '../representation/organisationScreens/org_home_screen.dart';
+import '../representation/organisationScreens/org_messages_screen.dart';
+import '../representation/organisationScreens/org_more_screen.dart';
+import '../representation/organisationScreens/org_news_screen.dart';
+
 
 class CustomNavigation extends StatefulWidget {
   const CustomNavigation({

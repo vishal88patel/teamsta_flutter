@@ -8,11 +8,14 @@ import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:flutter_toggle_tab/flutter_toggle_tab.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/colors.dart';
-import 'package:teamsta/constants/constraints.dart';
+import 'package:teamsta/constants/dimensions.dart';
 import 'package:teamsta/constants/controllers.dart';
-import 'package:teamsta/screens/organisation/widgets/widgets.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/dateTimeFields.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/fixture_switcher.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/fixturesLargeTextBox.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/textFormWithTopText.dart';
 
-import '../../constants/strings.dart';
+import '../../constants/global_strings.dart';
 
 class ResultsForm extends StatelessWidget {
   const ResultsForm({Key? key}) : super(key: key);

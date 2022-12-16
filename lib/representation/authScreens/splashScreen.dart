@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teamsta/constants/boxes.dart';
+import 'package:teamsta/constants/prefrence_box.dart';
 import 'package:teamsta/constants/colors.dart';
 import 'package:teamsta/constants/images.dart';
 import 'package:teamsta/widgets/getLocation.dart';

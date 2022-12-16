@@ -5,7 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:teamsta/widgets/widgets.dart';
 
 import '../constants/images.dart';
-import '../constants/strings.dart';
+import '../constants/global_strings.dart';
 
 class MapSample extends StatefulWidget {
   const MapSample({Key? key, required this.location}) : super(key: key);

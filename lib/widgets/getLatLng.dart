@@ -4,7 +4,7 @@ import 'package:google_geocoding/google_geocoding.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../constants/string_constants.dart';
-import '../constants/strings.dart';
+import '../constants/global_strings.dart';
 
 class GetLatLng{
   Future<LatLng?> getCoords(String addressFields) async {

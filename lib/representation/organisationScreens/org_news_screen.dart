@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:teamsta/constants/colors.dart';
-import 'package:teamsta/constants/constraints.dart';
+import 'package:teamsta/constants/dimensions.dart';
 import 'package:teamsta/constants/controllers.dart';
-import 'package:teamsta/screens/organisation/widgets/fixturesLargeTextBox.dart';
-import 'package:teamsta/screens/organisation/widgets/textFormWithTopText.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/fixturesLargeTextBox.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/textFormWithTopText.dart';
+
 
 import '../../constants/string_constants.dart';
 

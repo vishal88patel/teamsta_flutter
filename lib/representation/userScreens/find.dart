@@ -7,7 +7,8 @@ import 'package:teamsta/widgets/appBottomNav.dart';
 import 'package:teamsta/widgets/getLatLng.dart';
 import 'package:teamsta/widgets/getLocation.dart';
 
-import '../../global/lists/category_list.dart';
+import '../../Global/GlobalList/category_list.dart';
+
 
 TextEditingController _searchControllerFind = TextEditingController();
 

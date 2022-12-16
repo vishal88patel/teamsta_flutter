@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/screens/organisation/update/address.dart';
-import 'package:teamsta/screens/organisation/update/contact_emails.dart';
-import 'package:teamsta/screens/organisation/update/contact_number.dart';
-import 'package:teamsta/screens/organisation/update/contact_websites.dart';
-import 'package:teamsta/screens/organisation/update/member.dart';
-import 'package:teamsta/screens/organisation/update/profile.dart';
-import 'package:teamsta/screens/organisation/update/Org_service.dart';
+import 'package:teamsta/representation/organisationScreens/update/Org_service_screen.dart';
+import 'package:teamsta/representation/organisationScreens/update/addressScreen.dart';
+import 'package:teamsta/representation/organisationScreens/update/contact_emailsScreen.dart';
+import 'package:teamsta/representation/organisationScreens/update/contact_number_screen.dart';
+import 'package:teamsta/representation/organisationScreens/update/contact_websites_screen.dart';
+import 'package:teamsta/representation/organisationScreens/update/member_screen.dart';
+import 'package:teamsta/representation/organisationScreens/update/profile_screen.dart';
+
 
 class TeamMore extends StatelessWidget {
   const TeamMore({Key? key}) : super(key: key);

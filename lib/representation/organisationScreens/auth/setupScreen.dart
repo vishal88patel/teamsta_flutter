@@ -7,11 +7,11 @@ import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/global/lists/category_list.dart';
-import 'package:teamsta/screens/organisation/widgets/fixturesLargeTextBox.dart';
 import 'package:teamsta/widgets/widgets.dart';
 
+import '../../../Global/GlobalList/category_list.dart';
 import '../../../constants/string_constants.dart';
+import '../widgets/fixturesLargeTextBox.dart';
 
 class SetupPage extends StatefulWidget {
   const SetupPage({Key? key}) : super(key: key);

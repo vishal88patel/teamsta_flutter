@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:maps_launcher/maps_launcher.dart';
 
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/screens/page_exports.dart';
+import 'package:teamsta/representation/page_exports.dart';
+
+import '../userScreens/services.dart';
 
 class TeamServicePage extends StatelessWidget {
   const TeamServicePage({Key? key}) : super(key: key);

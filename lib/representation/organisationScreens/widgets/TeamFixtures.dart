@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/screens/organisation/widgets/fixture_form.dart';
-import 'package:teamsta/screens/organisation/widgets/result_dialog.dart';
+import 'package:teamsta/representation/organisationScreens/widgets/result_dialog.dart';
+
+import 'fixture_form.dart';
 
 class TeamFixturesList extends StatelessWidget {
   const TeamFixturesList({Key? key}) : super(key: key);

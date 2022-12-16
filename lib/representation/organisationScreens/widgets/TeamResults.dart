@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:teamsta/constants/export_constants.dart';
-import 'package:teamsta/screens/organisation/results_form.dart';
+
+import '../results_form_screen.dart';
 
 class TeamResultsList extends StatelessWidget {
   const TeamResultsList({Key? key}) : super(key: key);

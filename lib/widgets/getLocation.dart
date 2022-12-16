@@ -1,6 +1,6 @@
 import 'package:geolocator/geolocator.dart';
-import 'package:teamsta/constants/boxes.dart';
-import 'package:teamsta/constants/strings.dart';
+import 'package:teamsta/constants/prefrence_box.dart';
+import 'package:teamsta/constants/global_strings.dart';
 
 class GetLocation {
   getLocation() async {
